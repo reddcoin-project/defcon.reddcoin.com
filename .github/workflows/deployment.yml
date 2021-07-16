@@ -22,4 +22,4 @@ jobs:
         username: reddcoin
         key: ${{ secrets.DEPLOY_KEY }}
         command_timeout: 10m
-        script: git -C /home/reddcoin/devcon.reddcoin.com pull
+        script: git -C /home/reddcoin/devcon.reddcoin.com pull && docker restart devcon.reddcoin.com.proxy
