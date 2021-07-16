@@ -1,0 +1,25 @@
+name: Deploy to PRODUCTION
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+
+  deployment:
+ 
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@master
+      with:
+        ref: main
+    - name: deploy to cloud
+      uses: appleboy/ssh-action@master
+      with:
+        host: 147.182.140.248
+        username: reddcoin
+        key: ${{ secrets.DEPLOY_KEY }}
+        command_timeout: 10m
+        script: git -C /home/reddcoin/devcon.reddcoin.com pull
