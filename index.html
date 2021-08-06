@@ -26,13 +26,7 @@
     <p>Note: this subdomain and system is not a target of this competition.
       Please be respectful.</p>
     <p></p>
-    <h2>Available Resources.</h2>
-    <p></p>
-    <ul>
-      <li><a href="https://github.com/reddcoin-project/love-button/tree/Defcon">Reddcoin Browser Extension Wallet.</a> </li>
-      <li><a href="https://github.com/reddcoin-project/electrum-redd">Reddcoin Electrum Wallet.</a></li>
-      <li><a href="https://github.com/reddcoin-project/python-OP_RETURN">Python-OP_RETURN.</a></li>
-    </ul>
+
     <h2>Setup</h2>
     <h3>Preamble</h3>
     <p>Welcome to the DefCon29 Reddcoin CTF event.</p>
@@ -40,12 +34,68 @@
       For the scope of this event we are targeting a couple of different technologies that make up the Reddcoin environment.<br>
       There are flags available in the following categories.</p>
     <ul>
-      <li>Reddcoin general Knowledge.</li>
-      <li>Broswer extensions.</li>
+      <li>Reddcoin general knowledge.</li>
+      <li>Browser extensions.</li>
       <li>Blockchain.</li>
     </ul>
-    <p>In order to participate, there are a few tools available to you which we have outlined above.</p>
+    <p>In order to participate, there are a few tools available to you which we have outlined below.</p>
     <p>We also provide the following documentation to aid you in your journey.</p>
-    <h2>Configuration.</h2>
+    <h3>Configuration.</h3>
+    <p>For the most part, we have created a self contained environmant, running a <b>testnet</b> environment for the purposes of the CTF event.<br>
+      It is hosted in the cloud @ IP: 000.000.000.000</p>
+    <p>Therefore the majority of the blockchain interaction is done using <b>-testnet</b> switch</p>
+    <h4>Browser extension</h4>
+    <p>The browser extension is configured to run on the electrum network (testnet is already enabled for the extension).</p>
+    <p>You can download the git repo or the packaged file from the releases (links provided below).</p>
+    <p>Using your browsers extension loader, </p>
+    <p>Chrome: Extensions can be loaded in unpacked mode by following the following steps:</p>
+    <ol>
+      <li>Visit <code>chrome://extensions</code> (via omnibox or menu -&gt; Tools -&gt; Extensions).</li>
+      <li>Enable Developer mode by ticking the checkbox in the upper-right corner.</li>
+      <li>Click on the "Load unpacked extension..." button.</li>
+      <li>Select the directory containing your <strong>unpacked</strong> extension.</li>
+    </ol>
+    <p>If you have a crx file, then it needs to be extracted first. CRX files are zip files with a different header. Any capable zip program should be able to open it.</p>
+    <p>Firefox: Extensions can be loaded temporarily (until reload or removed) by following the following steps:</p>
+    <ol>
+    <li>open Firefox</li>
+    <li>enter "<code>about:debugging</code>" in the URL bar</li>
+    <li>click "This Firefox"</li>
+    <li>click "Load Temporary Add-on"</li>
+    <li>open the extension's directory and select any file inside the extension,<br>
+      or select the <a href="/documentation/publish/package-your-extension/">packaged extension (.zip file)</a>.</li>
+    </ol>
+    <h4>Electrum Wallet</h4>
+    <p>Check out the code from GitHub:</p>
+    <ul>
+      <li>git clone git://github.com/reddcoin-project/electrum-redd.git</li>
+      <li>cd electrum-redd</li>
+      <li>git submodule update --init</li>
+      <li>python -m venv myenv</li>
+      <li>source myenv/bin/activate</li>
+      <li>Follow the readme.rst for installation of dependencies</li>
+    </ul>
+    <h4>Reddcoin Core Wallet</h4>
+    <p>Download the appropriate version from website</p>
+    <ul>
+      <li>Download and install to your system</li>
+      <li>Blockchain sync can take some incredible time, we have provided bootstraps for both mainnet and testnet</li>
+      <ul>
+        <li>Download the bootstrap and extract to the required path</li>
+      </ul>
+    </ul>
+    <h4>Reddcoin Core Wallet Cli</h4>
+    <p>The reddcoin core cli component can be used to query the reddcoin blockchain network over RPC</p>
+    <p>Details to follow...</p>
+    <h4>Available Resources.</h4>
+    <ul>
+      <li><a href="https://github.com/reddcoin-project/love-button/tree/Defcon">Reddcoin Browser Extension (git repository).</a> </li>
+      <li><a href="https://github.com/reddcoin-project/love-button/releases/tag/vDefcon29.0">Reddcoin Browser Extension (Defcon version - Release).</a> </li>
+      <li><a href="https://github.com/reddcoin-project/electrum-redd">Reddcoin Electrum Wallet git repository.</a></li>
+      <li><a href="https://download.reddcoin.com/bin/reddcoin-core-3.10.3/">Reddcoin Core Wallet.</a></li>
+      <li><a href="https://download.reddcoin.com/bin/bootstrap/testnet-blockstore-Aug-02-2021.zip">Testnet Bootstrap.</a></li>
+      <li><a href="https://download.reddcoin.com/bin/bootstrap/blockchain-latest.zip">Mainnet Bootstrap.</a></li>
+      <li><a href="https://github.com/reddcoin-project/python-OP_RETURN">Python-OP_RETURN.</a></li>
+    </ul>
   </body>
 </html>
